@@ -1,5 +1,10 @@
 # Comparator intake compatibility repair
 
+Historical checkpoint for the repair published at commit
+`533f70fc7ad4a8a4a785bcdf1209f8ba1cc644cf`, before its hosted replay and first
+Palomar intake. Later process history is in the repository README and
+PUBLICATION.md.
+
 The `external_kernels` key is supported by the pinned Lean/Lake Comparator,
 but forbidden in submitted Palomar configurations. It is not an obsolete Lake
 option. Removing it from the submitted file is required for the reviewed

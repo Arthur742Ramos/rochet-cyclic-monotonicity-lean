@@ -12,4 +12,4 @@ Roberts/Defs.lean and Roberts/Taxation.lean at 0c176c66d2afa62301297f443b1e40eda
 
 Verified counterexample valuation rows: [0,-2,1], [1,0,-2], [-2,1,0], allocation identity. Edges 0→1→2→0 have weight −1 each; reverse edges have weight 2. Every distinct two-cycle sums to 1; the displayed three-cycle sums to −3.
 
-No public repository, push, intake, registration, withdrawal, or terms acceptance is authorized. Git author name/email were absent in global and inspected local configuration; do not invent commit identity.
+At this initial checkpoint, no public repository, push, intake, registration, withdrawal, or terms acceptance was authorized. Git author name/email were absent in global and inspected local configuration. This historical record predates the later authorization, verified Git identity, publication and first Palomar intake; later process history is in the repository README and PUBLICATION.md.

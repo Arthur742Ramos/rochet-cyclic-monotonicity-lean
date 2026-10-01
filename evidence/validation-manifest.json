@@ -1,9 +1,8 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-01T15:23:29.971484+00:00",
+  "recorded_at_utc": "2026-10-01T16:33:29.657409+00:00",
   "project": "Rochet's Cyclic-Monotonicity Characterization",
-  "scope": "Comparator intake compatibility repair; exact local verification and independent packaging review",
-  "git_commit": null,
+  "scope": "Local validation boundary for dated process-history prose correction; earlier publication, hosted verification and first Palomar intake are separate historical events",
   "configured_git_identity_found": true,
   "public_action_performed": true,
   "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
@@ -76,7 +75,8 @@
     "shell_and_python_script_syntax": "passed",
     "official_comparator_configuration_validator": "passed; submitted configuration has no external_kernels",
     "kernel_execution_configuration": "official submitted schema validated; execution-only temporary config requires bundled NanoDa, con-ron and Lean acceptance",
-    "independent_compatibility_packaging_review": "passed; exact core and log hashes reviewed before publication"
+    "independent_compatibility_packaging_review": "passed; exact core and log hashes reviewed before publication",
+    "independent_process_history_review": "passed; exact dated prose/metadata and historical evidence boundaries reviewed"
   },
   "tested_files_sha256": {
     ".gitignore": "83d18a9c6795e38ed6dffc3828ce126d7ba72e7e0dcb2a6e32d1e45a2e9981c7",
@@ -85,13 +85,13 @@
     "ContractAudit.lean": "36eda7a1d98e91f40277ab14bdfeff71892f2daca4caa98251c623321f988d4a",
     "LICENSE": "5c92d4e8aa0139d2c1810332bf69efcd6737d0e63d43d20c4ee9437ff0533d1f",
     "NOTICE": "bd02a1c1a62cb9e96cc951c1323aa321f9a6fe9b4c6ddec99aea0280f1857dfa",
-    "README.md": "36ba337e101c3cc8dec057510412bd69594eae4eab3272effdf74f64e0a43bfe",
+    "README.md": "b91b12bf3c6aa0385f1059757d244d00c513103a69ed8b06ba28d2e3f012e48e",
     "Rochet.lean": "b3d4bfce8308c69e399be2dc43d80b329c9907dfd5191e50a1976d3a0a8725cb",
     "Rochet/Defs.lean": "587a8203bf93d601064692a9fb1aa46ac746180b39fb1a2b8c2d3395a6b29f0f",
     "Rochet/Implementation.lean": "abdd158b6b8dd983981adbf8b529b5d5ce1d7b897a3a1e93185aab35b1a317b2",
     "Solution.lean": "9fba0923894ea2f43c31b589cd1158947a11c40f7561b9e92063ff57669d4c79",
     "comparator.json": "53997ba1ca55996c268ec8f3fb183fe3332de08b8ceb67d0bb20cf6bbed5a105",
-    "formalization.yaml": "31ba71b3b210cb3c9d318d75c116a6511bfbc50e7594cba617c278114e65347d",
+    "formalization.yaml": "08405bfb8c2b1b1116babc32114f0ad4dfe93109f0b4e5e51c3a0246e8d3d367",
     "lake-manifest.json": "2408aafd8cd1340d61c74cba0210d55a05aadaebf5394a87778258b54897bba3",
     "lakefile.toml": "205ac4e8e0805ec1fcd42839b1bc5eed088c8a131532835a06d2d87a373c0c3a",
     "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
@@ -118,12 +118,41 @@
     "evidence/mathematical-contract-review.md": "8c1899f04e36b9a83593ed9a83b9d81e1b1a26ab0a41127858d107e638b8b1f1",
     "evidence/final-source-review.md": "6d0e61d6119fcdae6de9954eec06d9293704daf1721f2cae4f22991ed9c9b748",
     "evidence/final-prose-review.md": "7a0736adc578a21779f042c1d3fe41d69ca4540f011c79cf7ded9bbe4214c260",
-    "evidence/compatibility-packaging-review.md": "4044917522b8e962ed6ab9b676dd72cefe7e6c368bdd655e4a2d1ad1b6d363af"
+    "evidence/compatibility-packaging-review.md": "4044917522b8e962ed6ab9b676dd72cefe7e6c368bdd655e4a2d1ad1b6d363af",
+    "evidence/process-history-review.md": "057cac1405bf9b81ffb776ae23138089486189b9db4daf6b6ec5afad0af94ccd"
   },
   "limitations": [
     "Local Comparator used unsandboxed mode on macOS",
-    "Repaired exact commit hosted check pending; no Palomar production verification, rendering, editorial acceptance or registration",
+    "This manifest records local validation; later exact-commit hosted checks have separate GitHub run artifacts",
+    "No human mathematical review is claimed",
     "Rochet DOI full text unavailable during source review"
   ],
-  "baseline_commit": "8ab90e9437c726ccc0d0e65ee0448a44a5e53fb3"
+  "baseline_commit": "533f70fc7ad4a8a4a785bcdf1209f8ba1cc644cf",
+  "process_history": [
+    {
+      "date": "2026-10-01",
+      "stage": "initial local preparation",
+      "boundary": "Original Library archive and initial reviews predate publication; historical claims retained with explicit labels"
+    },
+    {
+      "date": "2026-10-01",
+      "stage": "published and sandboxed hosted preflight passed",
+      "commit": "533f70fc7ad4a8a4a785bcdf1209f8ba1cc644cf",
+      "run_url": "https://github.com/Arthur742Ramos/rochet-cyclic-monotonicity-lean/actions/runs/36884407281",
+      "evidence": "Downloaded exact-run artifact independently hash-checked by implementation agent"
+    },
+    {
+      "date": "2026-10-01",
+      "stage": "first Palomar intake",
+      "commit": "533f70fc7ad4a8a4a785bcdf1209f8ba1cc644cf",
+      "mechanical_checks": "passed",
+      "automated_review": "no mathematical blocker; process-history correction requested; registration withheld",
+      "evidence": "Parent task reports the first intake result; no private capability URL included"
+    },
+    {
+      "date": "2026-10-01",
+      "stage": "prose-correction preparation checkpoint",
+      "boundary": "This editing task creates no intake or withdrawal; later Palomar events are recorded independently of the pinned history"
+    }
+  ]
 }

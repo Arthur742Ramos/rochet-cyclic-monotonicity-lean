@@ -1,4 +1,8 @@
-# Final local preparation status
+# Historical final local-preparation checkpoint
+
+This records the stage before public publication, hosted verification and
+the first Palomar intake. Its process statements describe that checkpoint;
+later publication and intake history is recorded in README and PUBLICATION.md.
 
 2026-10-01. The implementation, independent mathematical review, independent
 prose/binder/attribution review, and local validation are complete.

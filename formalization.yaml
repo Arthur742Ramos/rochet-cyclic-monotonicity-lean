@@ -78,7 +78,15 @@ automation:
     - method: "Lean tactic automation"
       role: "simp, linarith, norm_num, fin_cases; no native_decide"
 review:
-  status: "Local machine checks and independent AI review; no human mathematical review or Palomar editorial review claimed"
+  status: >-
+    Local checks and independent AI review completed. Sandboxed hosted
+    verification of commit 533f70fc7ad4a8a4a785bcdf1209f8ba1cc644cf completed.
+    The first Palomar intake passed mechanical checks; automated
+    review found no mathematical blocker and requested a process-history
+    correction, for which registration was withheld. This records the
+    prose-correction preparation checkpoint on 2026-10-01; later intake and
+    registration events are recorded separately by Palomar. No human
+    mathematical review is claimed.
 status:
   scope: >-
     Arbitrary nonempty single-agent report type. No finiteness, countability,

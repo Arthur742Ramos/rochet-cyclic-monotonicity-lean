@@ -69,7 +69,7 @@ checks the statements and all ordinary definition dependencies for equality.
 Lean `v4.35.0-rc2` and Mathlib
 `065356127b1dc0016f66b7283ce0ce2c4055aa55` are pinned in the project and manifest.
 All Lean sources use the required module system, with public interfaces and
-exposed concrete definitions. The current Palomar minimum was checked at PalomarSubmission revision
+exposed concrete definitions. The Palomar minimum was checked at PalomarSubmission revision
 `65f0154ed776cd26c224254aa57b379137f28b0d` on 2026-10-01.
 
 Reproduction requires Python 3.11 or later with PyYAML, plus a checkout of
@@ -124,5 +124,26 @@ review are disclosed in `formalization.yaml`; no human mathematical review
 is claimed. Bounded earlier registry/library searches found no matching
 theorem, which provides no novelty guarantee.
 
-The deliverable is a local preparation package. No public repository, push,
-Palomar intake, registration, withdrawal, or acceptance of terms has occurred.
+## Process history
+
+Initial preparation on 2026-10-01 was local. At that checkpoint no public
+repository had been created or pushed and no Palomar intake had occurred.
+The original Library archive and the local-preparation reports in `evidence/`
+record that earlier stage; they are historical evidence.
+
+The repository was subsequently published. Sandboxed hosted verification of
+commit `533f70fc7ad4a8a4a785bcdf1209f8ba1cc644cf`
+[completed successfully](https://github.com/Arthur742Ramos/rochet-cyclic-monotonicity-lean/actions/runs/36884407281),
+including separate builds, axiom and configuration audits, and acceptance by
+Lean, NanoDa and con-ron. This repository workflow is a standard Linux
+preflight, separate from Palomar's production verification.
+
+The first Palomar intake for that commit passed mechanical checks. Its
+automated review found no mathematical blocker and requested a correction
+to the stale README process account. Registration was withheld for that
+prose correction. This revision addresses the request. At its preparation
+checkpoint on 2026-10-01, before resubmitting this correction, the project had
+not been registered and Palomar had directed a new intake for the corrected
+commit. Subsequent intake and registration events are recorded by Palomar
+separately from this pinned process account. See `PUBLICATION.md` for the
+publication history and `evidence/README.md` for the evidence boundaries.
