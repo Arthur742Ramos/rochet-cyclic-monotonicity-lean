@@ -1,0 +1,35 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Rochet.pathWeights_nonempty",
+    "Rochet.pathWeights_lower_bound",
+    "Rochet.pathWeights_bddBelow",
+    "Rochet.potential_anchor",
+    "Rochet.potential_edge",
+    "Rochet.potential_bounds",
+    "Rochet.dsic_iff_edge",
+    "Rochet.anchoredPayment_spec",
+    "Rochet.rochet",
+    "Rochet.payment_eq_of_same_outcome",
+    "Rochet.multiPayment_spec",
+    "Rochet.multi_rochet",
+    "Rochet.example_two_cycles",
+    "Rochet.example_three_cycle",
+    "Rochet.example_not_implementable"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "external_kernels": {
+    "nanoda": [
+      "nanoda_bin"
+    ],
+    "con-ron": [
+      "con-ron"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+Official Palomar metadata validator: PASS
+Official Palomar source requirements: PASS
+Contract revision: 65f0154ed776cd26c224254aa57b379137f28b0d
+Current minimum: v4.35.0-rc2
+Source scan: {"files_checked": 7, "maximum_lines": 10000, "module_required": true, "schema_version": 1}
+Authors: ["Arthur Freitas Ramos", "David Barros Hulak", "Ruy Jose Guerra Barretto de Queiroz"]
+Classification: {"arxiv": ["econ.TH", "cs.GT"], "msc2020": ["91B03", "91B16", "03B35"]}
+License declaration: BSD-3-Clause; original upstream license retained byte-for-byte
+This is a local metadata/source scan, not hosted preparation or verification.

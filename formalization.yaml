@@ -1,0 +1,94 @@
+version: "v0.4"
+project:
+  name: "Rochet's Cyclic-Monotonicity Characterization"
+  description: >-
+    For any nonempty report type T, any outcome type X, any real-valued
+    valuation v : T -> X -> Real and allocation f : T -> X, DSIC payments
+    exist exactly when every finite closed walk has nonnegative sum of
+    weights l(s,t) = v(t,f(t)) - v(t,f(s)). The proof constructs payments
+    as the infimum of finite path weights from a fixed anchor. Direct
+    edges establish nonemptiness; a return edge supplies an explicit real
+    lower bound before using the infimum's order properties. The payments
+    are zero at the anchor and satisfy every implementing difference
+    inequality. The characterization also holds for arbitrary agents
+    with heterogeneous nonempty report spaces and decidable agent equality,
+    by fixing other reports and assembling anchored slice payments. A
+    three-type example satisfies all two-cycle inequalities but has a
+    negative three-cycle and admits no DSIC payment.
+  authors:
+    - "Arthur Freitas Ramos"
+    - "David Barros Hulak"
+    - "Ruy Jose Guerra Barretto de Queiroz"
+  responsible_maintainers:
+    - "Arthur Freitas Ramos"
+  license: "BSD-3-Clause"
+repository:
+  role: "substantive-development"
+classification:
+  arxiv: ["econ.TH", "cs.GT"]
+  msc2020: ["91B03", "91B16", "03B35"]
+sources:
+  - title: "A necessary and sufficient condition for rationalizability in a quasi-linear context"
+    authors: ["Jean-Charles Rochet"]
+    type: "article"
+    year: 1987
+    doi: "10.1016/0304-4068(87)90007-3"
+    url: "https://doi.org/10.1016/0304-4068(87)90007-3"
+    relationship: "formalizes"
+    note: >-
+      Mathematical attribution, not a claim to formalize the whole article.
+      The DOI full text was unavailable during source review; orientation
+      and hypotheses were independently derived and checked against the
+      readable finite-real construction in the second source.
+    author_endorsement: "not-contacted"
+  - title: "A Rockafellar-type theorem for non-traditional costs"
+    authors: ["Shiri Artstein-Avidan", "Shay Sadovsky", "Katarzyna Wyczesany"]
+    type: "preprint"
+    url: "https://arxiv.org/pdf/2011.13263v4"
+    relationship: "adapts"
+    note: >-
+      Sections 2.6 and 3.6 support the arbitrary-set finite-real potential argument.
+      Specializes to finite real costs. No extended-real, transport-measure,
+      countability, or black-hole theorem is asserted by this project.
+    author_endorsement: "not-contacted"
+  - title: "Roberts theorem Lean formalization: definitions and taxation"
+    authors: ["Arthur Freitas Ramos"]
+    type: "software"
+    url: "https://github.com/Arthur742Ramos/roberts-theorem-lean/tree/0c176c66d2afa62301297f443b1e40eda2387ca2"
+    relationship: "adapts"
+    license: "BSD-3-Clause"
+    note: >-
+      Adapts the utility convention and two-comparison common-outcome payment proof.
+      Roberts/Defs.lean and Roberts/Taxation.lean were inspected at the
+      stated commit. Their finite-agent and finite-outcome hypotheses do
+      not provide the arbitrary-set characterization. The new construction
+      is implemented here; the original license is retained in LICENSE.
+automation:
+  methods:
+    - method: "AI-assisted Lean proof development"
+      system: "OpenAI Codex, GPT-6.1 Sol, high reasoning"
+      role: >-
+        Source review, Lean implementation, metadata drafting, build execution,
+        kernel and axiom validation, and package preparation.
+    - method: "Independent AI mathematical and source review"
+      system: "OpenAI Codex, GPT-6.1 Sol, high reasoning"
+      role: >-
+        A separate agent checked orientation and hypotheses before implementation
+        and reviews the final exact source and prose-to-binder alignment.
+    - method: "Lean tactic automation"
+      role: "simp, linarith, norm_num, fin_cases; no native_decide"
+review:
+  status: "Local machine checks and independent AI review; no human mathematical review or Palomar editorial review claimed"
+status:
+  scope: >-
+    Arbitrary nonempty single-agent report type. No finiteness, countability,
+    topological, measurability, allocation-surjectivity, or globally bounded
+    valuation hypothesis. The multiagent theorem explicitly has DecidableEq I
+    and nonempty T i for each agent. With supplied anchors the normalization
+    and implementing-payment theorems require no separate nonemptiness instance.
+    Path nonemptiness is unconditional; boundedness follows from no negative
+    cycles. No payment uniqueness, individual rationality, budget balance,
+    extended-real generalization, or novelty guarantee is claimed.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]

@@ -1,0 +1,65 @@
+@Rochet.rochet.{u_1,
+    u_2} : ∀ {T : Type u_1} {X : Type u_2} [Nonempty.{u_1 + 1} T] (v : T → X → ℝ) (f : T → X),
+  (∃ p, Rochet.DSIC.{u_1, u_2} v f p) ↔ Rochet.CyclicMonotone.{u_1, u_2} v f
+@Rochet.multi_rochet.{u_1, u_2,
+    u_3} : ∀ {I : Type u_3} {T : I → Type u_1} {X : Type u_2} [inst : DecidableEq.{u_3 + 1} I]
+  (v : (i : I) → T i → X → ℝ) (f : ((i : I) → T i) → X) [∀ (i : I), Nonempty.{u_1 + 1} (T i)],
+  (∃ p, Rochet.MultiDSIC.{u_1, u_2, u_3} v f p) ↔ Rochet.SliceCyclicMonotone.{u_1, u_2, u_3} v f
+@Rochet.pathWeights_nonempty.{u_1} : ∀ {T : Type u_1} (l : T → T → ℝ) (r t : T),
+  Set.Nonempty.{0} (Rochet.pathWeights.{u_1} l r t)
+@Rochet.pathWeights_lower_bound.{u_1} : ∀ {T : Type u_1} (l : T → T → ℝ),
+  Rochet.NoNegativeCycles.{u_1} l →
+    ∀ (r t : T) (a : ℝ), Membership.mem.{0, 0} (Rochet.pathWeights.{u_1} l r t) a → LE.le.{0} (Neg.neg.{0} (l t r)) a
+@Rochet.pathWeights_bddBelow.{u_1} : ∀ {T : Type u_1} (l : T → T → ℝ),
+  Rochet.NoNegativeCycles.{u_1} l → ∀ (r t : T), BddBelow.{0} (Rochet.pathWeights.{u_1} l r t)
+@Rochet.potential_anchor.{u_1} : ∀ {T : Type u_1} (l : T → T → ℝ),
+  Rochet.NoNegativeCycles.{u_1} l → ∀ (r : T), Eq.{1} (Rochet.potential.{u_1} l r r) 0
+@Rochet.potential_edge.{u_1} : ∀ {T : Type u_1} (l : T → T → ℝ),
+  Rochet.NoNegativeCycles.{u_1} l →
+    ∀ (r s t : T), LE.le.{0} (HSub.hSub.{0, 0, 0} (Rochet.potential.{u_1} l r t) (Rochet.potential.{u_1} l r s)) (l s t)
+@Rochet.anchoredPayment_spec.{u_1,
+    u_2} : ∀ {T : Type u_1} {X : Type u_2} (v : T → X → ℝ) (f : T → X),
+  Rochet.CyclicMonotone.{u_1, u_2} v f →
+    ∀ (r : T),
+      Eq.{1} (Rochet.anchoredPayment.{u_1, u_2} v f r r) 0 ∧
+        Rochet.DSIC.{u_1, u_2} v f (Rochet.anchoredPayment.{u_1, u_2} v f r)
+@Rochet.multiPayment_spec.{u_1, u_2,
+    u_3} : ∀ {I : Type u_3} {T : I → Type u_1} {X : Type u_2} [inst : DecidableEq.{u_3 + 1} I]
+  (v : (i : I) → T i → X → ℝ) (f : ((i : I) → T i) → X),
+  Rochet.SliceCyclicMonotone.{u_1, u_2, u_3} v f →
+    ∀ (r : (i : I) → T i),
+      Rochet.MultiDSIC.{u_1, u_2, u_3} v f (Rochet.multiPayment.{u_1, u_2, u_3} v f r) ∧
+        ∀ (i : I) (b : (a : I) → T a),
+          Eq.{1} (Rochet.multiPayment.{u_1, u_2, u_3} v f r (Function.update.{u_3 + 1, u_1 + 1} b i (r i)) i) 0
+def Rochet.endpoint.{u} : {T : Type u} → T → List.{u} T → T :=
+fun {T} x x_1 => List.brecOn.{u + 1, u} (motive := fun x => T → T) x_1 Rochet.endpoint._f.{u} x
+def Rochet.walkWeight.{u} : {T : Type u} → (T → T → ℝ) → T → List.{u} T → ℝ :=
+fun {T} l x x_1 => List.brecOn.{u + 1, u} (motive := fun x => T → ℝ) x_1 (Rochet.walkWeight._f.{u} l) x
+def Rochet.pathWeights.{u} : {T : Type u} → (T → T → ℝ) → T → T → Set.{0} ℝ :=
+fun {T} l r t =>
+  Set.ofPred.{0} fun a => ∃ ts, Eq.{u + 1} (Rochet.endpoint.{u} r ts) t ∧ Eq.{1} (Rochet.walkWeight.{u} l r ts) a
+def Rochet.potential.{u} : {T : Type u} → (T → T → ℝ) → T → T → ℝ :=
+fun {T} l r t => sInf.{0} (Rochet.pathWeights.{u} l r t)
+def Rochet.edgeWeight.{u, w} : {T : Type u} → {X : Type w} → (T → X → ℝ) → (T → X) → T → T → ℝ :=
+fun {T} {X} v f s t => HSub.hSub.{0, 0, 0} (v t (f t)) (v t (f s))
+def Rochet.DSIC.{u, w} : {T : Type u} → {X : Type w} → (T → X → ℝ) → (T → X) → (T → ℝ) → Prop :=
+fun {T} {X} v f p =>
+  ∀ (t s : T), GE.ge.{0} (HSub.hSub.{0, 0, 0} (v t (f t)) (p t)) (HSub.hSub.{0, 0, 0} (v t (f s)) (p s))
+def Rochet.NoNegativeCycles.{u} : {T : Type u} → (T → T → ℝ) → Prop :=
+fun {T} l =>
+  ∀ (s : T) (ts : List.{u} T), Eq.{u + 1} (Rochet.endpoint.{u} s ts) s → LE.le.{0} 0 (Rochet.walkWeight.{u} l s ts)
+def Rochet.CyclicMonotone.{u, w} : {T : Type u} → {X : Type w} → (T → X → ℝ) → (T → X) → Prop :=
+fun {T} {X} v f => Rochet.NoNegativeCycles.{u} (Rochet.edgeWeight.{u, w} v f)
+def Rochet.MultiDSIC.{u, w, z} : {I : Type z} →
+  {T : I → Type u} →
+    {X : Type w} →
+      [DecidableEq.{z + 1} I] → ((i : I) → T i → X → ℝ) → (((i : I) → T i) → X) → (((i : I) → T i) → I → ℝ) → Prop :=
+fun {I} {T} {X} [DecidableEq.{z + 1} I] v f p =>
+  ∀ (i : I) (b : (i : I) → T i) (t : T i),
+    GE.ge.{0} (HSub.hSub.{0, 0, 0} (v i (b i) (f b)) (p b i))
+      (HSub.hSub.{0, 0, 0} (v i (b i) (f (Function.update.{z + 1, u + 1} b i t)))
+        (p (Function.update.{z + 1, u + 1} b i t) i))
+def Rochet.SliceCyclicMonotone.{u, w, z} : {I : Type z} →
+  {T : I → Type u} → {X : Type w} → [DecidableEq.{z + 1} I] → ((i : I) → T i → X → ℝ) → (((i : I) → T i) → X) → Prop :=
+fun {I} {T} {X} [DecidableEq.{z + 1} I] v f =>
+  ∀ (i : I) (b : (i : I) → T i), Rochet.CyclicMonotone.{u, w} (v i) (Rochet.slice.{u, w, z} f i b)

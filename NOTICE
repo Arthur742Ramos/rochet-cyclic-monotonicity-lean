@@ -1,0 +1,22 @@
+Rochet's Cyclic-Monotonicity Characterization
+Authors designated by the project initiator:
+Arthur Freitas Ramos
+David Barros Hulak
+Ruy Jose Guerra Barretto de Queiroz
+
+The DSIC utility convention and two-comparison proof of payment equality
+at a common outcome adapt Roberts/Defs.lean and Roberts/Taxation.lean
+from Arthur742Ramos/roberts-theorem-lean at
+0c176c66d2afa62301297f443b1e40eda2387ca2.
+Copyright (c) 2026 Arthur Freitas Ramos.
+The original BSD 3-Clause copyright, conditions, and disclaimer are
+retained in LICENSE. No Roberts source module is a project dependency.
+
+The cyclic-monotonicity characterization is attributed to Jean-Charles
+Rochet (1987). The arbitrary-set finite-real potential construction is
+also discussed by Shiri Artstein-Avidan, Shay Sadovsky and Katarzyna
+Wyczesany, arXiv:2011.13263v4, sections 2.6 and 3.6.
+
+Lean and Mathlib retain their own licenses. This project uses Mathlib as
+an external dependency; it does not redistribute Mathlib sources in the
+submission archive.

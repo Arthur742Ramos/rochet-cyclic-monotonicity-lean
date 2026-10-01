@@ -1,0 +1,19 @@
+Package checks passed: 15 selected theorems; zero definition holes
+Package checks passed: 15 selected theorems; zero definition holes
+WARNING: Sandbox disabled, this run is not trustworthy.
+Resolving dependencies
+Building Challenge
+Build completed successfully (1018 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, Rochet.pathWeights_nonempty, Rochet.pathWeights_lower_bound, Rochet.pathWeights_bddBelow, Rochet.potential_anchor, Rochet.potential_edge, Rochet.potential_bounds, Rochet.dsic_iff_edge, Rochet.anchoredPayment_spec, Rochet.rochet, Rochet.payment_eq_of_same_outcome, Rochet.multiPayment_spec, Rochet.multi_rochet, Rochet.example_two_cycles, Rochet.example_three_cycle, Rochet.example_not_implementable, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+Build completed successfully (1020 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, Rochet.pathWeights_nonempty, Rochet.pathWeights_lower_bound, Rochet.pathWeights_bddBelow, Rochet.potential_anchor, Rochet.potential_edge, Rochet.potential_bounds, Rochet.dsic_iff_edge, Rochet.anchoredPayment_spec, Rochet.rochet, Rochet.payment_eq_of_same_outcome, Rochet.multiPayment_spec, Rochet.multi_rochet, Rochet.example_two_cycles, Rochet.example_three_cycle, Rochet.example_not_implementable, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running con-ron kernel on solution
+con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
+con-ron: accepted 7388 declarations (--verified)
+con-ron kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!
