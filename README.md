@@ -74,7 +74,7 @@ exposed concrete definitions. The current Palomar minimum was checked at Palomar
 
 Reproduction requires Python 3.11 or later with PyYAML, plus a checkout of
 the official validator at the reviewed commit. `verify.sh` checks that
-revision and runs its metadata and complete repository-source scans. It also
+revision and runs its Comparator configuration, metadata and complete repository-source scans. It also
 records actual Lean binders, verifies module parsing, and prints every
 selected theorem's axioms.
 
@@ -95,6 +95,15 @@ sandbox. On macOS, its explicit unsandboxed mode is required; that local
 replay is evidence of statement, axiom, and kernel checks, with a weaker
 execution boundary. It does not establish hosted Palomar mechanical
 verification, rendering, editorial acceptance, or registration.
+
+The submitted `comparator.json` contains the modules, declarations and axiom
+allowlist. Palomar rejects submitter-provided `external_kernels`; its trusted
+verifier supplies NanoDa and con-ron itself. For local and standard hosted
+preflight, `verification_config.py` validates the submitted configuration using
+the pinned official loader and creates a temporary execution configuration with
+both bundled kernels. `verify.sh` requires explicit acceptance by Lean,
+NanoDa and con-ron. That preflight does not perform Palomar's separate
+canonical-Challenge provenance audit.
 
 ## Sources and provenance
 

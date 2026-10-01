@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-01T12:22:27.353291+00:00",
+  "recorded_at_utc": "2026-10-01T15:23:29.971484+00:00",
   "project": "Rochet's Cyclic-Monotonicity Characterization",
-  "scope": "Local implementation, independent audits and source-only archive preparation",
+  "scope": "Comparator intake compatibility repair; exact local verification and independent packaging review",
   "git_commit": null,
-  "configured_git_identity_found": false,
-  "public_action_performed": false,
+  "configured_git_identity_found": true,
+  "public_action_performed": true,
   "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
   "lean_compiler_commit": "11acb17ec6b07a8f9e9173e6845197929540936b",
   "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
@@ -73,7 +73,10 @@
       "bytes": 11167,
       "mathlib_only_imports": true
     },
-    "shell_and_python_script_syntax": "passed"
+    "shell_and_python_script_syntax": "passed",
+    "official_comparator_configuration_validator": "passed; submitted configuration has no external_kernels",
+    "kernel_execution_configuration": "official submitted schema validated; execution-only temporary config requires bundled NanoDa, con-ron and Lean acceptance",
+    "independent_compatibility_packaging_review": "passed; exact core and log hashes reviewed before publication"
   },
   "tested_files_sha256": {
     ".gitignore": "83d18a9c6795e38ed6dffc3828ce126d7ba72e7e0dcb2a6e32d1e45a2e9981c7",
@@ -82,42 +85,45 @@
     "ContractAudit.lean": "36eda7a1d98e91f40277ab14bdfeff71892f2daca4caa98251c623321f988d4a",
     "LICENSE": "5c92d4e8aa0139d2c1810332bf69efcd6737d0e63d43d20c4ee9437ff0533d1f",
     "NOTICE": "bd02a1c1a62cb9e96cc951c1323aa321f9a6fe9b4c6ddec99aea0280f1857dfa",
-    "README.md": "975b996a536310cd04cdc62fdb11655ebfe104ee8295c143aa6fe9c158f5e692",
+    "README.md": "36ba337e101c3cc8dec057510412bd69594eae4eab3272effdf74f64e0a43bfe",
     "Rochet.lean": "b3d4bfce8308c69e399be2dc43d80b329c9907dfd5191e50a1976d3a0a8725cb",
     "Rochet/Defs.lean": "587a8203bf93d601064692a9fb1aa46ac746180b39fb1a2b8c2d3395a6b29f0f",
     "Rochet/Implementation.lean": "abdd158b6b8dd983981adbf8b529b5d5ce1d7b897a3a1e93185aab35b1a317b2",
     "Solution.lean": "9fba0923894ea2f43c31b589cd1158947a11c40f7561b9e92063ff57669d4c79",
-    "comparator.json": "e548d2165d715af2693e26536c4be9dc3743c787cb33da91e265fb89a89215c4",
+    "comparator.json": "53997ba1ca55996c268ec8f3fb183fe3332de08b8ceb67d0bb20cf6bbed5a105",
     "formalization.yaml": "31ba71b3b210cb3c9d318d75c116a6511bfbc50e7594cba617c278114e65347d",
     "lake-manifest.json": "2408aafd8cd1340d61c74cba0210d55a05aadaebf5394a87778258b54897bba3",
     "lakefile.toml": "205ac4e8e0805ec1fcd42839b1bc5eed088c8a131532835a06d2d87a373c0c3a",
     "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
     "scripts/check_package.py": "6472993d9d8920773151d64e646863a5ee1124f8de5c4dbe04d473e6a7817daa",
     "scripts/package_source.py": "bbd12c2ac70318f34ba2aff455e5b863ecbd6244af34fc2d7bdf6d3685089acb",
-    "scripts/verify.sh": "2d44e8f6a6f00eb88dbc8a667dc7679d7aa8e5d5e4a4a5582e9fbdaae460d8cd",
-    "scripts/verify_metadata.py": "eac27b6460cf7e02c80c3a3c9ebee623881051cd176e70394a4c35024f071cf9"
+    "scripts/verification_config.py": "b84a028cbb89ed3f9b889126c352e5e2d2ae49b0f269f8aa1bf5ff6498157095",
+    "scripts/verify.sh": "7b8ca390019e2d5087f2c53da86215b804a769c821b014c1647e5a5c146ea77b",
+    "scripts/verify_metadata.py": "93ca66f5a73d433f870408413c1a2fd1a69e0bf7a5d192a235bcaca2e572f02f"
   },
   "validation_logs_sha256": {
     "evidence/challenge-build.log": "ccd6181e2e44952c00e433582771313bc5bcf1f71ecd782feaea36f3980aee16",
-    "evidence/solution-build.log": "824f4ae9e3d71c5590ae0dec821f8489bf64e6aaa2a3f16f17c999c9a84c217d",
-    "evidence/full-build.log": "5346ffbfbef668011fc2a6ccf6c5023df71fb73ebd56597781be5fcad51184d7",
+    "evidence/solution-build.log": "f2f290352974e3f8567c7817736f699ecf8a3bb4ea9d5c7595911a3c9279f910",
+    "evidence/full-build.log": "4ebc14d14918edb2a52df3293229aa8206b2cdb83f9eb2fd80c8109a514521cc",
     "evidence/axioms.log": "4ee8e11ece1ab544b9b3966a7667ad7a5678e735c7d7de2f8c8d446e2b621495",
     "evidence/contract-binders.log": "d45595ca180e11a8d06348698181221d2148c1ff5a2161351254be0f0140c98b",
     "evidence/challenge-header.json": "65f07cbcce646e33fb3106edc9e9cc3bf64aa9f7bc4e488db06620c5e5c955d3",
     "evidence/challenge-source-deps.log": "eece1c8788e611b7110ab29b2bc8b1053dfe91b290e96390947a873733a513de",
-    "evidence/metadata-validation.log": "fd6629e186648e1a57da0a2b6a6b0516e39f7237bbdda719583b825b97705d6c",
+    "evidence/metadata-validation.log": "07d8a68d12ea42a925a532b05e59cbd8d3fd504ca912587d2f47bf036d29559d",
     "evidence/comparator.log": "2a8fe2ba3ca085bf278d47d7bcdfd816788798ab651dcf590d5dda889fb74176",
-    "evidence/verification.log": "59f2c95d7b831fdf46bfd4b0f98a668dd5abd3cd83f3df87c4d374e17d8d39d4"
+    "evidence/verification.log": "59f2c95d7b831fdf46bfd4b0f98a668dd5abd3cd83f3df87c4d374e17d8d39d4",
+    "evidence/comparator-configuration.log": "2e6a88087216f6fe0c2f29f55edfa584ade22e34a4d4e82c731a00554e4deb11"
   },
   "independent_review_sha256": {
     "evidence/mathematical-contract-review.md": "8c1899f04e36b9a83593ed9a83b9d81e1b1a26ab0a41127858d107e638b8b1f1",
     "evidence/final-source-review.md": "6d0e61d6119fcdae6de9954eec06d9293704daf1721f2cae4f22991ed9c9b748",
-    "evidence/final-prose-review.md": "7a0736adc578a21779f042c1d3fe41d69ca4540f011c79cf7ded9bbe4214c260"
+    "evidence/final-prose-review.md": "7a0736adc578a21779f042c1d3fe41d69ca4540f011c79cf7ded9bbe4214c260",
+    "evidence/compatibility-packaging-review.md": "4044917522b8e962ed6ab9b676dd72cefe7e6c368bdd655e4a2d1ad1b6d363af"
   },
   "limitations": [
-    "No configured Git author identity and no commit",
     "Local Comparator used unsandboxed mode on macOS",
-    "No hosted mechanical verification, rendering, editorial acceptance or registration",
+    "Repaired exact commit hosted check pending; no Palomar production verification, rendering, editorial acceptance or registration",
     "Rochet DOI full text unavailable during source review"
-  ]
+  ],
+  "baseline_commit": "8ab90e9437c726ccc0d0e65ee0448a44a5e53fb3"
 }

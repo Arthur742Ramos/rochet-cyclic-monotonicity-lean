@@ -34,6 +34,16 @@ the official path-specific user-namespace profile on the disposable hosted
 runner. Comparator remains sandboxed; no global restriction is disabled and
 no persistent runner, account permission or credential is added.
 
+Palomar browser preflight subsequently identified an intake schema mismatch:
+`external_kernels` is a Lake execution option, but is forbidden in a submitted
+Palomar configuration. The repair removes only that key from `comparator.json`.
+All selected declarations, modules, axiom permissions and Lean sources remain
+unchanged. Verification now validates the submitted configuration through the
+official loader and generates an execution-only temporary configuration with
+the toolchain's bundled NanoDa and con-ron. Both kernel acceptances and Lean's
+acceptance remain mandatory. Palomar's production verifier independently
+injects its own protected kernel configuration.
+
 The full reusable Palomar verifier requires a specialized Namespace runner
 not present among the existing repository runners. This project does not
 request new runner access or persistent grants. Standard Linux proof

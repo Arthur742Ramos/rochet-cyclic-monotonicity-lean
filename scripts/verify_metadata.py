@@ -21,7 +21,9 @@ if actual != PIN:
 sys.path.insert(0, str(contract))
 from scripts.submission_contract import load_formalization_metadata, normalized_provenance
 from scripts.source_requirements import inspect_lean_sources
+from scripts.verify_submission import load_comparator_config
 
+config = load_comparator_config(ROOT / "comparator.json")
 metadata = load_formalization_metadata(ROOT / "formalization.yaml")
 provenance = normalized_provenance(metadata)
 scan, issues = inspect_lean_sources(ROOT)
@@ -33,6 +35,7 @@ minimum = json.loads((contract / "toolchains.json").read_text())["minimum"]
 assert (ROOT / "lean-toolchain").read_text().strip() == "leanprover/lean4:" + minimum
 assert metadata["project"]["license"] == "BSD-3-Clause"
 print("Official Palomar metadata validator: PASS")
+print("Official Palomar comparator configuration validator: PASS")
 print("Official Palomar source requirements: PASS")
 print("Contract revision:", actual)
 print("Current minimum:", minimum)

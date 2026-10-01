@@ -23,13 +23,5 @@
     "propext",
     "Quot.sound",
     "Classical.choice"
-  ],
-  "external_kernels": {
-    "nanoda": [
-      "nanoda_bin"
-    ],
-    "con-ron": [
-      "con-ron"
-    ]
-  }
+  ]
 }

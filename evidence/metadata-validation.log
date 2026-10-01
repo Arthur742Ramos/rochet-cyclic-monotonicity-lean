@@ -1,4 +1,5 @@
 Official Palomar metadata validator: PASS
+Official Palomar comparator configuration validator: PASS
 Official Palomar source requirements: PASS
 Contract revision: 65f0154ed776cd26c224254aa57b379137f28b0d
 Current minimum: v4.35.0-rc2
