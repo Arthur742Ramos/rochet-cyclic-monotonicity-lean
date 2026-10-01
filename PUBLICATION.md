@@ -26,6 +26,14 @@ official Comparator under Linux bubblewrap. It uses read-only repository
 permissions and no supplied secrets. The Linux Lean release digest was
 verified from the official GitHub release asset metadata.
 
+The first hosted run completed proof builds and axiom audits but Ubuntu denied
+the distribution bubblewrap binary permission to create a user namespace.
+The workflow now uses the reviewed Palomar `scripts/install_bwrap.sh` at the
+pinned policy commit. It builds checksum-verified bubblewrap v0.12.0 and loads
+the official path-specific user-namespace profile on the disposable hosted
+runner. Comparator remains sandboxed; no global restriction is disabled and
+no persistent runner, account permission or credential is added.
+
 The full reusable Palomar verifier requires a specialized Namespace runner
 not present among the existing repository runners. This project does not
 request new runner access or persistent grants. Standard Linux proof

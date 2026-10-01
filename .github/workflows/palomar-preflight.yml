@@ -41,7 +41,8 @@ jobs:
       - name: Install checked Lean release and local verifier prerequisites
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y bubblewrap zstd
+          sudo apt-get install -y meson ninja-build libcap-dev pkg-config zstd
+          echo "COMPARATOR_BWRAP=$("$PALOMAR_SUBMISSION_DIR/scripts/install_bwrap.sh" "$RUNNER_TEMP/bwrap-bin")" >> "$GITHUB_ENV"
           python -m pip install --require-hashes --no-deps -r "$PALOMAR_SUBMISSION_DIR/requirements.txt"
           curl --fail --location --retry 2 \
             https://github.com/leanprover/lean4/releases/download/v4.35.0-rc2/lean-4.35.0-rc2-linux.tar.zst \
@@ -84,6 +85,7 @@ jobs:
               'run_id': os.environ['GITHUB_RUN_ID'],
               'runner_os': os.environ['RUNNER_OS'],
               'sandbox': 'Linux bubblewrap',
+              'bubblewrap': 'v0.12.0 built by the pinned official Palomar installer',
               'official_comparator_verdict': 'Your solution is okay!',
               'tested_files_sha256': m['tested_files_sha256'],
               'logs_sha256': {str(p): hashlib.sha256(p.read_bytes()).hexdigest()
